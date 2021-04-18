@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/store.ico" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>JS Exercise</title>
+  </head>
+  <body>
+    <div class="container w-50 shadow my-5 py-5">
+      <h1>CRUD SYSTEM</h1>
+      <label for="productName">productName:</label>
+      <input type="text" class="form-control mb-3" id="productName" />
+      <label for="productCategory">productCategory:</label>
+      <input type="text" class="form-control mb-3" id="productCategory" />
+      <label for="productPrice">productPrice:</label>
+      <input type="number" class="form-control mb-3" id="productPrice" />
+      <label>productDescription:</label>
+      <textarea class="form-control mb-3" id="productDescription"></textarea>
+      <button id="mainBtn" onclick="addProduct();" class="btn btn-info">add product</button>
+      <button id="cancelBtn" onclick="cancelUpdate();" class="btn btn-danger" style="visibility: hidden">cancel update</button>
+    </div>
+    <input id="searchInp" onkeyup="realTimeSearch();" type="text" class="form-control w-25 mx-auto" placeholder="search..." />
+
+    <table class="table table-striped w-75 mx-auto mt-5">
+      <thead>
+        <th>index</th>
+        <th>name</th>
+        <th>category</th>
+        <th>price</th>
+        <th>description</th>
+        <th>update</th>
+        <th>delete</th>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
