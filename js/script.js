@@ -6,14 +6,14 @@ var productNameInp = document.getElementById("productName"),
   cancelBtn = document.getElementById("cancelBtn"),
   searchInp = document.getElementById("searchInp"),
   tbody = document.getElementById("tbody");
-// check if local storage is empty
+//ANCHOR check if local storage is empty
 if (localStorage.getItem("productData") != null) {
   var productsList = JSON.parse(localStorage.getItem("productData"));
 } else {
   var productsList = [];
 }
 displayProduct();
-// create product operation function
+//ANCHOR create product operation function
 function addProduct() {
   var product = {
     productName: productNameInp.value,
@@ -26,14 +26,14 @@ function addProduct() {
   displayProduct();
   cleanForm();
 }
-// clean form
+//ANCHOR clean form
 function cleanForm() {
   productNameInp.value = "";
   productCategoryInp.value = "";
   productPriceInp.value = "";
   productDescriptionInp.value = "";
 }
-// display product
+//ANCHOR display product
 function displayProduct() {
   var trs = "";
   for (var i = 0; i < productsList.length; i++) {
@@ -47,46 +47,46 @@ function displayProduct() {
   }
   tbody.innerHTML = trs;
 }
-// delet product function
+//ANCHOR delet product function
 function deleteProduct(x) {
   productsList.splice(x, 1);
   localStorage.setItem("productData", JSON.stringify(productsList));
   displayProduct();
 }
-// update product function
+//ANCHOR update product function
 function updateProduct(x) {
   productNameInp.value = productsList[x].productName;
   productCategoryInp.value = productsList[x].productCat;
   productPriceInp.value = productsList[x].productPrice;
   productDescriptionInp.value = productsList[x].productDesc;
   mainBtn.setAttribute("onclick", `updateProductBtn(${x});`);
-  mainBtn.innerHTML = "update product";
+  mainBtn.innerHTML = "Update Product";
   cancelBtn.style.visibility = "visible";
 }
-// update product btn function
+//ANCHOR update product btn function
 function updateProductBtn(x) {
   productsList[x].productName = productNameInp.value;
   productsList[x].productCat = productCategoryInp.value;
   productsList[x].productPrice = productPriceInp.value;
   productsList[x].productDesc = productDescriptionInp.value;
   mainBtn.setAttribute("onclick", `addProduct();`);
-  mainBtn.innerHTML = "add product";
+  mainBtn.innerHTML = "Add Product";
   cancelBtn.style.visibility = "hidden";
   localStorage.setItem("productData", JSON.stringify(productsList));
   displayProduct();
   cleanForm();
 }
-// cancel update function
+//ANCHOR cancel update function
 function cancelUpdate() {
   productNameInp.value = "";
   productCategoryInp.value = "";
   productPriceInp.value = "";
   productDescriptionInp.value = "";
   mainBtn.setAttribute("onclick", `addProduct();`);
-  mainBtn.innerHTML = "add product";
+  mainBtn.innerHTML = "Add Product";
   cancelBtn.style.visibility = "hidden";
 }
-// real time search
+//ANCHOR real time search
 function realTimeSearch() {
   var searchedWord = searchInp.value.toLowerCase();
   var trs = "";

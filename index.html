@@ -10,30 +10,46 @@
     <title>JS Exercise</title>
   </head>
   <body>
-    <div class="container w-50 shadow my-5 py-5">
+    <div class="container shadow my-5 p-5">
       <h1>CRUD SYSTEM</h1>
-      <label for="productName">productName:</label>
-      <input type="text" class="form-control mb-3" id="productName" />
-      <label for="productCategory">productCategory:</label>
-      <input type="text" class="form-control mb-3" id="productCategory" />
-      <label for="productPrice">productPrice:</label>
-      <input type="number" class="form-control mb-3" id="productPrice" />
-      <label>productDescription:</label>
-      <textarea class="form-control mb-3" id="productDescription"></textarea>
-      <button id="mainBtn" onclick="addProduct();" class="btn btn-info">add product</button>
-      <button id="cancelBtn" onclick="cancelUpdate();" class="btn btn-danger" style="visibility: hidden">cancel update</button>
+      <div class="form-row mb-3">
+        <label for="productName">Product Name:</label>
+        <input type="text" class="form-control" id="productName" />
+        <div class="valid-feedback">Product Name Looks good!</div>
+        <div class="invalid-feedback">Please provide a valid Product Name!</div>
+      </div>
+      <div class="form-row mb-3">
+        <label for="productCategory">Product Category:</label>
+        <input type="text" class="form-control" id="productCategory" />
+        <div class="valid-feedback">Product Category Looks good!</div>
+        <div class="invalid-feedback">Please provide a valid Product Category!</div>
+      </div>
+      <div class="form-row mb-3">
+        <label for="productPrice">Product Price:</label>
+        <input type="text" class="form-control" id="productPrice" />
+        <div class="valid-feedback">Product Price Looks good!</div>
+        <div class="invalid-feedback">Please provide a valid Product Price!</div>
+      </div>
+      <div class="form-row mb-3">
+        <label for="productDescription">Product Description:</label>
+        <textarea class="form-control" id="productDescription"></textarea>
+      </div>
+      <div class="form-row mb-3">
+        <button id="mainBtn" onclick="addProduct();" class="btn btn-info">Add Product</button>
+        <button id="cancelBtn" onclick="cancelUpdate();" class="btn btn-danger" style="visibility: hidden">Cancel Update</button>
+      </div>
     </div>
     <input id="searchInp" onkeyup="realTimeSearch();" type="text" class="form-control w-25 mx-auto" placeholder="search..." />
 
     <table class="table table-striped w-75 mx-auto mt-5">
-      <thead>
-        <th>index</th>
-        <th>name</th>
-        <th>category</th>
-        <th>price</th>
-        <th>description</th>
-        <th>update</th>
-        <th>delete</th>
+      <thead class="bg-dark text-white">
+        <th>Index</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Update</th>
+        <th>Delete</th>
       </thead>
       <tbody id="tbody"></tbody>
     </table>
