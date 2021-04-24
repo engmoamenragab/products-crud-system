@@ -17,3 +17,6 @@ form {
   margin-bottom: 30px;
   font-weight: 600;
 }
+.container .form-row .form-alert {
+  transition: display 0.3s ease-in-out;
+}
