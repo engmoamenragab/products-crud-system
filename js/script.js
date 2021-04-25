@@ -117,10 +117,12 @@ function updateProductBtn(x) {
 }
 //ANCHOR cancel update function
 function cancelUpdate() {
-  productNameInp.value = "";
-  productCategoryInp.value = "";
-  productPriceInp.value = "";
-  productDescriptionInp.value = "";
+  cleanForm();
+  clearProductNameValidation();
+  clearProductCategoryValidation();
+  clearProductPriceValidation();
+  clearProductDescriptionValidation();
+  productBtnsAlert.classList.add("d-none");
   mainBtn.setAttribute("onclick", `addProduct();`);
   mainBtn.innerHTML = "Add Product";
   cancelBtn.style.visibility = "hidden";
