@@ -28,7 +28,7 @@ function addProduct() {
   productCategoryInpValue = productCategoryInp.value;
   productPriceInpValue = productPriceInp.value;
   productDescriptionInpValue = productDescriptionInp.value;
-  if (productNameInp.value != "" && productCategoryInp.value != "" && productPriceInp.value != "" && productDescriptionInp.value != "") {
+  if (productNameInpValue != "" && productCategoryInpValue != "" && productPriceInpValue != "" && productDescriptionInpValue != "") {
     if (validateProductName() && validateProductCategory() && validateProductPrice() && validateProductDescription()) {
       var product = {
         productName: productNameInp.value,
@@ -45,8 +45,6 @@ function addProduct() {
       clearProductCategoryValidation();
       clearProductPriceValidation();
       clearProductDescriptionValidation();
-    } else {
-      productBtnsAlert.classList.remove("d-none");
     }
   } else {
     productBtnsAlert.classList.remove("d-none");
@@ -91,20 +89,31 @@ function updateProduct(x) {
 }
 //ANCHOR update product btn function
 function updateProductBtn(x) {
-  productsList[x].productName = productNameInp.value;
-  productsList[x].productCat = productCategoryInp.value;
-  productsList[x].productPrice = productPriceInp.value;
-  productsList[x].productDesc = productDescriptionInp.value;
-  mainBtn.setAttribute("onclick", `addProduct();`);
-  mainBtn.innerHTML = "Add Product";
-  cancelBtn.style.visibility = "hidden";
-  localStorage.setItem("productData", JSON.stringify(productsList));
-  displayProduct();
-  cleanForm();
-  clearProductNameValidation();
-  clearProductCategoryValidation();
-  clearProductPriceValidation();
-  clearProductDescriptionValidation();
+  productNameInpValue = productNameInp.value;
+  productCategoryInpValue = productCategoryInp.value;
+  productPriceInpValue = productPriceInp.value;
+  productDescriptionInpValue = productDescriptionInp.value;
+  if (productNameInpValue != "" && productCategoryInpValue != "" && productPriceInpValue != "" && productDescriptionInpValue != "") {
+    if (validateProductName() && validateProductCategory() && validateProductPrice() && validateProductDescription()) {
+      productsList[x].productName = productNameInpValue;
+      productsList[x].productCat = productCategoryInpValue;
+      productsList[x].productPrice = productPriceInpValue;
+      productsList[x].productDesc = productDescriptionInpValue;
+      mainBtn.setAttribute("onclick", `addProduct();`);
+      mainBtn.innerHTML = "Add Product";
+      cancelBtn.style.visibility = "hidden";
+      localStorage.setItem("productData", JSON.stringify(productsList));
+      displayProduct();
+      cleanForm();
+      clearProductNameValidation();
+      clearProductCategoryValidation();
+      clearProductPriceValidation();
+      clearProductDescriptionValidation();
+      productBtnsAlert.classList.add("d-none");
+    }
+  } else {
+    productBtnsAlert.classList.remove("d-none");
+  }
 }
 //ANCHOR cancel update function
 function cancelUpdate() {
