@@ -249,7 +249,7 @@ productPriceInp.addEventListener("keyup", validateProductPrice);
 productPriceInp.addEventListener("blur", clearProductPriceValidation);
 //ANCHOR validate product description function
 function validateProductDescription() {
-  var productDescriptionRegex = /^[A-Z]?[a-z]{3,10} [a-z]{3,10}$/;
+  var productDescriptionRegex = /^[A-Z]?[A-Za-z ]{3,20}$/;
   productDescriptionInpValue = productDescriptionInp.value;
   validateProductDescriptionRegex = productDescriptionRegex.test(productDescriptionInpValue);
   if (validateProductDescriptionRegex == true) {
