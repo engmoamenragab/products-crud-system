@@ -50,6 +50,10 @@ function addProduct() {
     productBtnsAlert.classList.remove("d-none");
   }
 }
+//ANCHOR clear add product validation function
+function clearAddProductValidation() {
+  productBtnsAlert.classList.add("d-none");
+}
 //ANCHOR clean form
 function cleanForm() {
   productNameInp.value = "";

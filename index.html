@@ -33,7 +33,7 @@
         <div class="alert alert-danger w-100 mt-2 d-none form-alert">Please Provide Description between 3 to 20 characters!</div>
       </div>
       <div class="productBtnsRow form-row mb-3">
-        <button id="mainBtn" onclick="addProduct();" class="btn btn-info">Add Product</button>
+        <button id="mainBtn" onclick="addProduct();" onblur="clearAddProductValidation();" class="btn btn-info">Add Product</button>
         <button id="cancelBtn" onclick="cancelUpdate();" class="btn btn-danger ml-2" style="visibility: hidden">Cancel Update</button>
         <div class="alert alert-danger w-100 mt-2 d-none form-alert">All Fields Required!</div>
       </div>
